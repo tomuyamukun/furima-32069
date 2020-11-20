@@ -6,10 +6,10 @@
 | nickname                | string | null: false|
 | email                   | string | null: false|
 | encrypted_password      | string | null: false|
-| first_name(kanji)       | string | null: false|
-| last_name(kanji)        | string | null: false|
-| first_name(kana)        | string | null: false|
-| last_name(kana)         | string | null: false|
+| first_name_kanji        | string | null: false|
+| last_name_kanji         | string | null: false|
+| first_name_kana         | string | null: false|
+| last_name_kana          | string | null: false|
 | birthday                | date   | null: false|
 
 
@@ -17,8 +17,7 @@
 
 <!-- - has_many :comments -->
 - has_many :items
-- has_one :buyer
-- has_one :card
+- has_many :orders
 
 
 ## items テーブル
@@ -32,7 +31,7 @@
 | source_id          | integer   | null: false                  |
 | shipping_id        | integer   | null: false                  |
 | price              | integer   | null: false                  |
-| user_id            | references| null:false  foreign_key: true|
+| user               | references| null:false  foreign_key: true|
 
 
 
@@ -40,8 +39,7 @@
 
 <!-- - has_many :comments -->
 - belongs_to :user
-- has_one :buyer
-- has_one :card
+- has_one :order
 
 
 
@@ -50,7 +48,7 @@
 | Column              | Type      | Options                      |
 | ------------------- | --------- | ---------------------------- |
 | postal_code         | string    | null: false                  |   
-| source_id           | string    | null: false                  |
+| source_id           | integer   | null: false                  |
 | municipality        | string    | null: false                  |
 | address             | string    | null: false                  |
 | building            | string    |                              |
@@ -67,26 +65,24 @@
 
  ### Association
 
-- belongs_to :item
-- belongs_to :user
-- has_one :card
+- belongs_to :order
 
 
 
 
-
-## card テーブル
+## orders テーブル
 
 | Column      | Type       | Options                       |
 | ----------- | ---------- | ----------------------------- |
-| item_id     | references | null:false  foreign_key: true |
-| user_id     | references | null:false  foreign_key: true |   
+| item        | references | null:false  foreign_key: true |
+| user        | references | null:false  foreign_key: true | 
+| buyer       | references | null:false foreign_key: true |  
 
  ### Association
 
 - belongs_to :user
 - belongs_to :item
-- belongs_to :buyer
+- has_one :buyer
 
 
 
