@@ -45,14 +45,15 @@
 
 
 ## buyer テーブル 
-| Column              | Type      | Options                      |
-| ------------------- | --------- | ---------------------------- |
-| postal_code         | string    | null: false                  |   
-| source_id           | integer   | null: false                  |
-| municipality        | string    | null: false                  |
-| address             | string    | null: false                  |
-| building            | string    |                              |
-| phone               | string    | null: false                  |
+| Column              | Type       | Options                       |
+| ------------------- | ---------- | ----------------------------- |
+| postal_code         | string     | null: false                   |   
+| source_id           | integer    | null: false                   |
+| municipality        | string     | null: false                   |
+| address             | string     | null: false                   |
+| building            | string     |                               |
+| phone               | string     | null: false                   |
+| order               | references | null:false  foreign_key: true |
 
 
 
@@ -76,7 +77,6 @@
 | ----------- | ---------- | ----------------------------- |
 | item        | references | null:false  foreign_key: true |
 | user        | references | null:false  foreign_key: true | 
-| buyer       | references | null:false foreign_key: true |  
 
  ### Association
 

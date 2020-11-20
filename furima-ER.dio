@@ -1,4 +1,4 @@
-<mxfile host="65bd71144e" modified="2020-11-20T06:14:28.923Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.50.1 Chrome/83.0.4103.122 Electron/9.2.1 Safari/537.36" etag="cpIdb9lsvMOCkkM2Ywn1" version="13.6.5">
+<mxfile host="65bd71144e" modified="2020-11-20T06:36:28.601Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.50.1 Chrome/83.0.4103.122 Electron/9.2.1 Safari/537.36" etag="x3enqLiFFcJ9mslmPrib" version="13.6.5">
     <diagram id="6sOw9x7CiEr7s7SWxQgY" name="ページ1">
         <mxGraphModel dx="4897" dy="3968" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
@@ -43,7 +43,7 @@
                 <mxCell id="43" value="Items" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
                     <mxGeometry x="-710" y="-1010" width="320" height="320" as="geometry"/>
                 </mxCell>
-                <mxCell id="44" value="name string  null:false&#10;&#10;text  text  (under1000) null:false&#10;&#10;category_id   integer   null:false&#10;&#10;status_id  integer  null:false&#10;&#10;fee_id  integer  null:false&#10;&#10;source_id integerg  null:false&#10;&#10;shipping_id    integer  null:false&#10;&#10;price    integer   null:false&#10;&#10;usr_id  references  null:false  foreign_key: true" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="43" vertex="1">
+                <mxCell id="44" value="name string  null:false&#10;&#10;text  text  (under1000) null:false&#10;&#10;category_id   integer   null:false&#10;&#10;status_id  integer  null:false&#10;&#10;fee_id  integer  null:false&#10;&#10;source_id integerg  null:false&#10;&#10;shipping_id    integer  null:false&#10;&#10;price    integer   null:false&#10;&#10;usre  references  null:false  foreign_key: true" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="43" vertex="1">
                     <mxGeometry y="30" width="320" height="290" as="geometry"/>
                 </mxCell>
                 <mxCell id="83" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="43" source="44" target="44" edge="1">
@@ -70,13 +70,13 @@
                 <mxCell id="62" value="Buyer" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
                     <mxGeometry x="-1180" y="-1690" width="370" height="300" as="geometry"/>
                 </mxCell>
-                <mxCell id="63" value="&#10;postal_code        string     null:false&#10;&#10;source_id          integer      null:false&#10;&#10;municipality         stringg    null:false&#10;&#10;address               string       null:false&#10;&#10;building                string&#10;&#10;phone                   string     null:false&#10;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="62" vertex="1">
+                <mxCell id="63" value="&#10;postal_code        string     null:false&#10;&#10;source_id          integer      null:false&#10;&#10;municipality         stringg    null:false&#10;&#10;address               string       null:false&#10;&#10;building                string&#10;&#10;phone                   string     null:false&#10;&#10;order                    references    null:false   foreign_key: true&#10;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="62" vertex="1">
                     <mxGeometry y="30" width="370" height="270" as="geometry"/>
                 </mxCell>
                 <mxCell id="100" value="orders" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
                     <mxGeometry x="-2160" y="-1350" width="317" height="140" as="geometry"/>
                 </mxCell>
-                <mxCell id="101" value="&#10;item    references   null:false  foreign_key: true&#10;&#10;user      references  null:false  foreign_key: true    &#10;&#10;buyer    references  null:false  forgign_key:true" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="100" vertex="1">
+                <mxCell id="101" value="&#10;item    references   null:false  foreign_key: true&#10;&#10;user      references  null:false  foreign_key: true    &#10;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="100" vertex="1">
                     <mxGeometry y="30" width="317" height="110" as="geometry"/>
                 </mxCell>
                 <mxCell id="117" value="" style="fontSize=12;html=1;endArrow=ERmandOne;startArrow=ERmandOne;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="63">
