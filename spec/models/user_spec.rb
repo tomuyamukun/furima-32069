@@ -47,6 +47,11 @@ describe User do
         @user.valid?
         expect(@user.errors.full_messages).to include("Email can't be blank")
       end
+      it "emailに@がない場合登録されない" do
+        @user.email ="aaadom"
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Email is invalid")
+      end
       it "emailが重複すると登録できない" do
         @user.save
         another_user = FactoryBot.build(:user)
