@@ -67,12 +67,12 @@ describe User do
       it "passwordが半角英字だけだと登録できない" do
         @user.password = "aaaaaa"
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password is invalid")
+        expect(@user.errors.full_messages).to include("Password Include both letters and numbers")
       end
       it "passwordが数字だけだと登録できない" do
         @user.password = "000000"
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password is invalid")
+        expect(@user.errors.full_messages).to include("Password Include both letters and numbers")
       end
 
       it "passwordが５文字以下だと登録できない" do
@@ -90,21 +90,35 @@ describe User do
         @user.valid?
         expect(@user.errors.full_messages).to include("Last name kanji can't be blank")
       end
+
+      it "last_name_kanjiが全角でないと登録できない" do
+        @user.last_name_kanji = "aaa"
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Last name kanji Full-width characters")
+      end
+
       it "first_name_kanjiが空だと登録できない" do
         @user.first_name_kanji = ""
         @user.valid?
         expect(@user.errors.full_messages).to include("First name kanji can't be blank")
       end
+
+      it "first_name_kanjiが全角でないと登録できない" do
+        @user.first_name_kanji = "aaa"
+        @user.valid?
+        expect(@user.errors.full_messages).to include("First name kanji Full-width characters")
+      end
+
       it "last_name_kana空だと登録できない" do
         @user.last_name_kana = ""
         @user.valid?
         expect(@user.errors.full_messages).to include("Last name kana can't be blank")
       end
+    
       it "last_name_kana全角カナでないと登録できない" do
         @user.last_name_kana = "さとう"
         @user.valid?
-        expect(@user.errors.full_messages).to include("Last name kana is invalid")
-
+        expect(@user.errors.full_messages).to include("Last name kana Full-width katakana character")
       end
       it "first_name_kanaが空だと登録できない" do
         @user.first_name_kana = ""
@@ -114,16 +128,13 @@ describe User do
       it "first_name_kanaが全角カナでないと登録できない" do
         @user.first_name_kana = "漢字"
         @user.valid?
-        expect(@user.errors.full_messages).to include("First name kana is invalid")
+        expect(@user.errors.full_messages).to include("First name kana Full-width katakana character")
       end
       it "birthdayが空だと登録できない" do
         @user.birthday = ""
         @user.valid?
         expect(@user.errors.full_messages).to include("Birthday can't be blank")
       end
-
     end
-
-
   end
 end
