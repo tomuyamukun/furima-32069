@@ -3,20 +3,19 @@ class Item < ApplicationRecord
   # has_one :order
   has_one_attached :image 
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to :category  
-  validates :category_id, numericality: { other_than: 1, message: "Select" } 
-
-  belongs_to :status
-  validates :status_id, numericality: { other_than: 1, message: "Select" } 
-
+  belongs_to :category   
+  belongs_to :status 
   belongs_to :fee
-  validates :fee_id, numericality: { other_than: 1, message: "Select" }
-  
   belongs_to :source
-  validates :source_id, numericality: { other_than: 1, message: "Select" } 
-
   belongs_to :shipping
-  validates :shipping_id, numericality: { other_than: 1, message: "Select" } 
+
+  with_options numericality: { other_than: 1, message: "Select" } do
+    validates :category_id
+    validates :status_id
+    validates :fee_id
+    validates :source_id
+    validates :shipping_id
+  end
 
   validates :price, numericality: { message: "Half-width number" }
 
