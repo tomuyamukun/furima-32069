@@ -55,6 +55,8 @@ class ItemsController < ApplicationController
 
   def move_to_login
     @item = Item.find(params[:id])
-    redirect_to user_session_path unless user_signed_in? && current_user.id == @item.user_id
+    unless user_signed_in? && current_user.id == @item.user_id
+     redirect_to user_session_path
+    end
   end
 end
