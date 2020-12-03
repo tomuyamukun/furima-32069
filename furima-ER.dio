@@ -1,6 +1,6 @@
-<mxfile host="65bd71144e" modified="2020-11-20T06:36:28.601Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.50.1 Chrome/83.0.4103.122 Electron/9.2.1 Safari/537.36" etag="x3enqLiFFcJ9mslmPrib" version="13.6.5">
+<mxfile host="65bd71144e" modified="2020-12-02T15:44:22.372Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.50.1 Chrome/83.0.4103.122 Electron/9.2.1 Safari/537.36" etag="VXHkuAfauntIdb_5EGkU" version="13.6.5">
     <diagram id="6sOw9x7CiEr7s7SWxQgY" name="ページ1">
-        <mxGraphModel dx="4897" dy="3968" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="3689" dy="2991" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -52,43 +52,43 @@
                 <mxCell id="108" value="belongs_to: user" style="whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
                     <mxGeometry x="-2110" y="-1530" width="100" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="109" value="belongs_to :items" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+                <mxCell id="109" value="belongs_to :items" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
                     <mxGeometry x="-2110" y="-1470" width="100" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="110" value="belongs_to :order" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+                <mxCell id="110" value="belongs_to :buyer" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
                     <mxGeometry x="-740" y="-1670" width="100" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="113" value="" style="fontSize=12;html=1;endArrow=ERmandOne;startArrow=ERmandOne;exitX=-0.009;exitY=0.186;exitDx=0;exitDy=0;entryX=1;entryY=1;entryDx=0;entryDy=0;exitPerimeter=0;" edge="1" parent="1" source="44">
+                <mxCell id="113" value="" style="fontSize=12;html=1;endArrow=ERmandOne;startArrow=ERmandOne;exitX=-0.009;exitY=0.186;exitDx=0;exitDy=0;entryX=1;entryY=1;entryDx=0;entryDy=0;exitPerimeter=0;" parent="1" source="44" edge="1">
                     <mxGeometry width="100" height="100" relative="1" as="geometry">
                         <mxPoint x="-1219.9899999999998" y="-1490.0000000000002" as="sourcePoint"/>
                         <mxPoint x="-1830" y="-1279.89" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="114" value="has_one :order" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+                <mxCell id="114" value="has_one :buyer" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
                     <mxGeometry x="-380" y="-900" width="100" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="62" value="Buyer" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
-                    <mxGeometry x="-1180" y="-1690" width="370" height="300" as="geometry"/>
+                <mxCell id="62" value="order" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="-1179" y="-1689" width="370" height="300" as="geometry"/>
                 </mxCell>
-                <mxCell id="63" value="&#10;postal_code        string     null:false&#10;&#10;source_id          integer      null:false&#10;&#10;municipality         stringg    null:false&#10;&#10;address               string       null:false&#10;&#10;building                string&#10;&#10;phone                   string     null:false&#10;&#10;order                    references    null:false   foreign_key: true&#10;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="62" vertex="1">
+                <mxCell id="63" value="&#10;postal_code        string     null:false&#10;&#10;source_id          integer      null:false&#10;&#10;municipality         stringg    null:false&#10;&#10;address               string       null:false&#10;&#10;building                string&#10;&#10;phone                   string     null:false&#10;&#10;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="62" vertex="1">
                     <mxGeometry y="30" width="370" height="270" as="geometry"/>
                 </mxCell>
-                <mxCell id="100" value="orders" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
+                <mxCell id="100" value="buyer" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
                     <mxGeometry x="-2160" y="-1350" width="317" height="140" as="geometry"/>
                 </mxCell>
                 <mxCell id="101" value="&#10;item    references   null:false  foreign_key: true&#10;&#10;user      references  null:false  foreign_key: true    &#10;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="100" vertex="1">
                     <mxGeometry y="30" width="317" height="110" as="geometry"/>
                 </mxCell>
-                <mxCell id="117" value="" style="fontSize=12;html=1;endArrow=ERmandOne;startArrow=ERmandOne;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="63">
+                <mxCell id="117" value="" style="fontSize=12;html=1;endArrow=ERmandOne;startArrow=ERmandOne;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="63" edge="1">
                     <mxGeometry width="100" height="100" relative="1" as="geometry">
                         <mxPoint x="-1840" y="-1350" as="sourcePoint"/>
                         <mxPoint x="-1300" y="-1520" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="118" value="has_one: buyer" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+                <mxCell id="118" value="has_one: order" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
                     <mxGeometry x="-2110" y="-1580" width="100" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="119" value="" style="fontSize=12;html=1;endArrow=ERzeroToMany;startArrow=ERzeroToOne;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=-0.002;exitY=-0.067;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="17" target="101">
+                <mxCell id="119" value="" style="fontSize=12;html=1;endArrow=ERzeroToMany;startArrow=ERzeroToOne;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=-0.002;exitY=-0.067;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="17" target="101" edge="1">
                     <mxGeometry width="100" height="100" relative="1" as="geometry">
                         <mxPoint x="-1700" y="-980" as="sourcePoint"/>
                         <mxPoint x="-1600" y="-1080" as="targetPoint"/>

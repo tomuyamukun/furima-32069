@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   #ルートパスにアクセスしたときindexアクションを呼び起こす
   root to: 'items#index'
   resources :users, only: [:edit, :update]
-  resources :items
+  resources :items do
+    resources :orders, only: [:create, :index, :new]
+  end
 
 end
