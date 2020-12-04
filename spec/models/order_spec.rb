@@ -5,7 +5,7 @@ RSpec.describe Order, type: :model do
     @order = FactoryBot.build(:order)
   end
 
- describe '購入手続きをするorderの中身を入れる' do
+ describe '購入手続きをする,orderの中身を入れる' do
     context '購入できるとき' do
       it 'postal_code, source_id, city, house_number, phone_numberがあれば登録できる' do
        expect(@order).to be_valid
