@@ -13,6 +13,10 @@ RSpec.describe Purchase, type: :model do
       it '必要な情報全てに適切な値を入れると購入できる' do
         expect(@purchase).to be_valid
       end
+      it '建物名は空でも購入できる' do
+        @purchase.building_name = ""
+        expect(@purchase).to be_valid
+      end
     end
 
     context '購入できないとき' do
