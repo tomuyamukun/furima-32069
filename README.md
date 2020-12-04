@@ -39,21 +39,23 @@
 
 <!-- - has_many :comments -->
 - belongs_to :user
+- has_one :buyer
 - has_one :order
 
 
 
 
-## buyer テーブル 
+## order テーブル 
 | Column              | Type       | Options                       |
 | ------------------- | ---------- | ----------------------------- |
 | postal_code         | string     | null: false                   |   
 | source_id           | integer    | null: false                   |
-| municipality        | string     | null: false                   |
-| address             | string     | null: false                   |
-| building            | string     |                               |
-| phone               | string     | null: false                   |
-| order               | references | null:false  foreign_key: true |
+| city                | string     | null: false                   |
+| house_number        | string     | null: false                   |
+| building_name       | string     |                               |
+| phone_number        | string     | null: false                   |
+| user_item           | references | null:false  foreign_key: true | 
+| buyer               | references | null:false  foreign_key: true | 
 
 
 
@@ -66,12 +68,13 @@
 
  ### Association
 
-- belongs_to :order
+- belongs_to :buyer
+- belongs_to :item
 
 
 
 
-## orders テーブル
+## buyer テーブル
 
 | Column      | Type       | Options                       |
 | ----------- | ---------- | ----------------------------- |
@@ -82,7 +85,7 @@
 
 - belongs_to :user
 - belongs_to :item
-- has_one :buyer
+- has_one :order
 
 
 
